@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_widget_example/widgets/button.dart';
+import 'package:ui_widget_example/widgets/currency_card.dart';
 
 void main() {
   runApp(MyApp());
@@ -87,51 +88,26 @@ class MyApp extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              Container(
-                clipBehavior: Clip.hardEdge, // container 밖으로 overflow 됬을 때 어떻게 처리할지 지정
-                decoration: BoxDecoration(
-                  color: Color(0xFF1F2123),
-                  borderRadius: BorderRadius.circular(25),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(30),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Euro", style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 32,
-                            fontWeight: FontWeight.w600,
-                          )),
-                          SizedBox(height: 10),
-                          Row(
-                            children: [
-                              Text("6 428", style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),),
-                              const SizedBox(width: 5),
-                              Text("EUR", style: TextStyle(
-                                color: Colors.white.withOpacity(0.8),
-                                fontSize: 20
-                              )),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Transform.scale(
-                        scale: 2.2,
-                        child: Transform.translate(
-                            offset: const Offset(-5, 12),
-                            child: Icon(Icons.euro_rounded, color: Colors.white, size: 88),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
+              const CurrencyCard(
+                  name: "Euro",
+                  code: "EUR",
+                  amount: "6 428",
+                  icon: Icons.euro_rounded,
+                  isInverted: true,
+              ),
+              const CurrencyCard(
+                name: "Bitcoin",
+                code: "BTC",
+                amount: "1 234",
+                icon: Icons.currency_bitcoin_rounded,
+                isInverted: false,
+              ),
+              const CurrencyCard(
+                name: "Dollar",
+                code: "USD",
+                amount: "9 876",
+                icon: Icons.attach_money_rounded,
+                isInverted: true,
               ),
             ],
           ),
