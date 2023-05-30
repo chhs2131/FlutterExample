@@ -3,7 +3,6 @@ import 'package:webtoon_example/screens/home_screen.dart';
 import 'package:webtoon_example/services/api_service.dart';
 
 void main() {
-  ApiService().getTodaysToons();  // print 구문을 통해 api 동작을 확인
   runApp(const MyApp());
 }
 
