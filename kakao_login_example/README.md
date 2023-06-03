@@ -1,7 +1,11 @@
 # kakao_login_example
 2023-06-02
 
-## add dependencies
+<br/>
+
+## 🛠️ add dependencies
+
+### pubspec.yaml
 ```groovy
 dependencies:
   kakao_flutter_sdk: ^1.4.1 # 전체 추가
@@ -13,11 +17,22 @@ dependencies:
   kakao_flutter_sdk_friend: ^1.4.1 # 카카오톡 소셜(피커: 친구 선택하기)
 ```
 
+### 의존성 업데이트
 `flutter pub get`
 
-## 카카오 개발자 페이지 설정
+<br/>
+<br/>
 
+## 🎁 프로젝트 설정
+
+### 개발자 페이지 설정
 ![img.png](img.png)
+
+<br/>
+
+### android manifest 파일 설정
+./android/app/src/main/AndroidManifest.xml
+
 ```xml
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kakao_login_example">
@@ -33,6 +48,9 @@ dependencies:
 
 ```
 
+<br/>
+
+### keystore 설정
 ![img_1.png](img_1.png)
 debug key hash
 ` keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore -storepass android -keypass android | openssl sha1 -binary | openssl base64`
@@ -40,7 +58,16 @@ debug key hash
 release key hash
 `keytool -exportcert -alias <RELEASE_KEY_ALIAS> -keystore <RELEASE_KEY_PATH> | openssl sha1 -binary | openssl base64`
 
-## Link
+<br/>
+<br/>
+
+## 🎉 실행 예시
+![img_2.png](img_2.png)
+
+<br/>
+<br/>
+
+## 🏀 Link
 https://velog.io/@morion002/Flutter-2-Kakao-SDK-for-Flutter
 https://vanillacreamdonut.tistory.com/200
 
