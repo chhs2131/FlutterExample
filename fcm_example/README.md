@@ -1,13 +1,14 @@
-# fcm_example
+# FCM Example
 - 안드로이드를 기준으로 작성
 - 요구사항
   - 최소 Android API 19
   - Android 4.4 이상
 - 이 프로젝트를 이용해서 테스트 하려는 경우 `lib/firebase_options.dart`에 있는 정보를 firebase 프로젝트에 맞게 수정 할 것
 
-## 앱 실행모습
+###  앱 실행모습
 ![img_9.png](img_9.png)
 
+<br/>
 <br/>
 
 ## Firebase SDK 설치
@@ -17,20 +18,28 @@ npm이 있다면 이를 이용해서 설치
 
 설치완료 후 firebase 로그인
 `firebase login`
+
 ![img.png](img.png)
+
+<br/>
 
 FlutterFire CLI 설치
 - 윈도우는 환경변수를 직접등록하라는 멘트와 함께 경로 정보가 나오니 집중해서 봐야한다!!
 `dart pub global activate flutterfire_cli`
  
 - 참고로 환경변수는 아래 위치에 있다. 
+
 ![img_4.png](img_4.png)
 
+<br/>
+
 ### Firebase Project 생성
+
 ![img_1.png](img_1.png)
 
 ![img_2.png](img_2.png)
 
+<br/>
 <br/>
 
 ## 개발 환경설정
@@ -45,9 +54,11 @@ flutterfire configure --project=nnnn-000000 // 실제 파이어베이스 프로�
 Firebase configuration file lib\firebase_options.dart generated successfully with the following Firebase apps:
 ```
 
+<br/>
+
 ### Firebase 초기화 및 플러그인 추가
 Firebase를 초기화하려면 새 firebase_options.dart 파일의 구성으로 firebase_core 패키지에서 Firebase.initializeApp을 호출합니다.
-
+```dart
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
@@ -56,16 +67,21 @@ import 'firebase_options.dart';
 await Firebase.initializeApp(
 options: DefaultFirebaseOptions.currentPlatform,
 );
+```
 그런 다음 사용할 Firebase 제품의 Flutter 플러그인을 추가하고 사용합니다.
+
 ![img_5.png](img_5.png)
+
 참고: 애널리틱스 또는 Performance Monitoring을 사용하는 경우 몇 가지 추가 설정 단계를 수행해야 할 수도 있습니다.
 
+<br/>
 <br/>
 
 ## FCM
 ### 의존성 추가
 ```python
 flutter pub add firebase_messaging
+
 Resolving dependencies...
 + _flutterfire_internals 1.3.2
   collection 1.17.1 (1.17.2 available)
@@ -79,13 +95,20 @@ Resolving dependencies...
 Changed 4 dependencies!
 ```
 
+<br/>
+
 ### 등록 토큰 엑세스
+아래 코드를 통해 `fcmToken`을 확인할 수 있고, 해당 토큰을 기반으로 device에 알림을 전송할 수 있다.
 ```dart
 final fcmToken = await FirebaseMessaging.instance.getToken();
 ```
 
+<br/>
+
 ### 테스트 알림 메시지 전송
+
 ![img_6.png](img_6.png)
+
 1. 대상 기기에 앱을 설치하고 실행합니다. Apple 기기에서는 원격 알림을 수신할 수 있는 권한 요청을 수락해야 합니다.
 2. 앱을 기기에서 백그라운드 상태로 만듭니다.
 3. Firebase Console에서 메시지 페이지를 엽니다.
@@ -100,12 +123,21 @@ final fcmToken = await FirebaseMessaging.instance.getToken();
 테스트를 선택하면 타겟팅된 클라이언트 기기(앱은 백그라운드 상태임)에서 알림을 수신해야 합니다.
 앱으로 전송된 메시지의 통계를 파악하려면 Apple 및 Android 기기에서 열린 전송 메시지 수와 Android 앱의 '노출수'(사용자에게 표시된 알림) 데이터가 기록된 FCM 보고 대시보드를 확인합니다.
 
+<br/>
+
 ### 수신 확인
+
 ![img_7.png](img_7.png)
+
+
+<br/>
+<br/>
 
 ## Error
 ### flutterfire 없음
+
 ![img_3.png](img_3.png)
+
 https://firebase.flutter.dev/
 ```python
 flutter pub add firebase_core
@@ -129,6 +161,8 @@ dart pub global activate flutterfire_cli
 # Run the `configure` command, select a Firebase project and platforms
 flutterfire configure
 ```
+
+<br/>
 
 ### android: minSdkVersion
 - minSdkVersion 19 이상 필요
@@ -161,6 +195,10 @@ Execution failed for task ':app:processDebugMainManifest'.
   		or increase this project's minSdk version to at least 19,
   		or use tools:overrideLibrary="io.flutter.plugins.firebase.messaging" to force usage (may lead to runtime failures)
 ```
+
+
+<br/>
+<br/>
 
 ## Link
 - https://firebase.google.com/docs/flutter/setup?hl=ko&platform=android
