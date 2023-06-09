@@ -6,7 +6,7 @@
 - 이 프로젝트를 이용해서 테스트 하려는 경우 `lib/firebase_options.dart`에 있는 정보를 firebase 프로젝트에 맞게 수정 할 것
 
 ###  앱 실행모습
-![img_9.png](img_9.png)
+![img_9.png](readme-file/img_9.png)
 
 <br/>
 <br/>
@@ -19,7 +19,7 @@ npm이 있다면 이를 이용해서 설치
 설치완료 후 firebase 로그인
 `firebase login`
 
-![img.png](img.png)
+![img.png](readme-file/img.png)
 
 <br/>
 
@@ -29,15 +29,18 @@ FlutterFire CLI 설치
  
 - 참고로 환경변수는 아래 위치에 있다. 
 
-![img_4.png](img_4.png)
+![img_4.png](readme-file/img_4.png)
+
+- 맥의 경우 `export PATH="$PATH":"$HOME/.pub-cache/bin"`을 통해 환경변수를 추가해주면 된다.
+![img.png](readme-file/img32342.png)
 
 <br/>
 
 ### Firebase Project 생성
 
-![img_1.png](img_1.png)
+![img_1.png](readme-file/img_1.png)
 
-![img_2.png](img_2.png)
+![img_2.png](readme-file/img_2.png)
 
 <br/>
 <br/>
@@ -70,7 +73,7 @@ options: DefaultFirebaseOptions.currentPlatform,
 ```
 그런 다음 사용할 Firebase 제품의 Flutter 플러그인을 추가하고 사용합니다.
 
-![img_5.png](img_5.png)
+![img_5.png](readme-file/img_5.png)
 
 참고: 애널리틱스 또는 Performance Monitoring을 사용하는 경우 몇 가지 추가 설정 단계를 수행해야 할 수도 있습니다.
 
@@ -107,7 +110,7 @@ final fcmToken = await FirebaseMessaging.instance.getToken();
 
 ### 테스트 알림 메시지 전송
 
-![img_6.png](img_6.png)
+![img_6.png](readme-file/img_6.png)
 
 1. 대상 기기에 앱을 설치하고 실행합니다. Apple 기기에서는 원격 알림을 수신할 수 있는 권한 요청을 수락해야 합니다.
 2. 앱을 기기에서 백그라운드 상태로 만듭니다.
@@ -127,7 +130,7 @@ final fcmToken = await FirebaseMessaging.instance.getToken();
 
 ### 수신 확인
 
-![img_7.png](img_7.png)
+![img_7.png](readme-file/img_7.png)
 
 
 <br/>
@@ -136,7 +139,7 @@ final fcmToken = await FirebaseMessaging.instance.getToken();
 ## Error 
 ### flutterfire 없음
 
-![img_3.png](img_3.png)
+![img_3.png](readme-file/img_3.png)
 
 https://firebase.flutter.dev/
 ```python
