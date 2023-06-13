@@ -1,28 +1,39 @@
 # bloc_example
 cubit(viewModel)을 이용한 간단한 login flow 예시
 
-## bloc 구조
-- 동작 구조
-
-![img.png](readme_file/img.png)
-
-- Bloc을 사용한 아키텍처
-
-![img_1.png](readme_file/img_1.png)
-
 ### 프로젝트 실행 예시
 ![img_2.png](readme_file/img_2.png)
 
+### 실행 예시
+![cubit_example.gif](readme_file/cubit_example.gif)
+
+
+<br/>
+
+## bloc 구조
+### 동작 구조
+
+![img.png](readme_file/img.png)
+
+### Bloc을 사용한 아키텍처
+
+![img_1.png](readme_file/img_1.png)
+
+<br/>
 
 ## 환경설정
+- 의존성 추가 (pubspec.yaml)
 ```yaml
 dependencies:
   flutter_bloc: ^8.0.0
 ```
 
+- 프로젝트 업데이트 (terminal에서 입력)
 `flutter pub get`
 
-## 초간단 적용예시
+<br/>
+
+## 간단히 Cubit을 사용한 예
 ```dart
 // counter_cubit.dart
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,10 +54,13 @@ void main() {
 }
 ```
 
+
+<br/>
+
 ## 개발
 
 - Cubit 클래스 선언시 <꺽쇠> 안에 기억해 둘 Object를 명시한다.
-- emit(state)을 통해 Object 정보가 바뀔 때 업데이트가 된다. Object 정보가 바뀌었음의 기준은 onChange가 발생할 때이다.
+- emit(state)을 통해 Object 정보가 바뀔 때 업데이트가 된다. Object 정보가 바뀌었음의 간단한 기준은 CubitClass.onChange()가 발생할 때이다.
   - state class가 달라질때 변화를 반영(setState)하게 된다. 달라졌다는 것의 기준은 obejct의 hash인 듯 
 - Cubit은 BlocBase를 상속하고 있으며 생성시 _blocObserver.onCreate가 실행된다.
 - 관련한 모든 동작에 대해서 bloc_observer.dart를 참고하면 좋다.
@@ -67,6 +81,9 @@ class LoginCubit extends Cubit<LoginState> {
     print(loginState.toString());
   }
 ```
+
+
+<br/>
 
 - emit 상태 업데이트 예시
   - 이 코드에서는 method chaining 을 이용하였으나, 보통 copyWith을 많이 사용함
@@ -90,8 +107,8 @@ emit(state.setLogin(false).setMessage("로그인 실패!").setLoading(false).cop
 ```
 
 
-## 실행 예시
-[dfdf](readme_file/cubit_example.gif)
+
+<br/>
 
 ## 참고자료
 - [Bloc Offical](https://bloclibrary.dev/#/)
