@@ -78,11 +78,24 @@ class Page2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: OutlinedButton(
-          onPressed: () {
-            Navigator.pop(context, MaterialPageRoute(builder: (context) => MyApp()));
-          },
-          child: Text("back"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            /// Navigator를 사용하는 순간 cubit이 사라지니 주의
+            // BlocBuilder<ScoreCubit, ScoreState>(
+            //   builder: (context, state) {
+            //     return Text(
+            //       "score: ${state.korean! + state.english! + state.math!}",
+            //     );
+            //   }
+            // ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.pop(context, MaterialPageRoute(builder: (context) => MyApp()));
+              },
+              child: Text("back"),
+            ),
+          ],
         ),
       ),
     );
