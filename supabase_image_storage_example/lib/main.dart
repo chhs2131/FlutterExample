@@ -5,8 +5,8 @@ import 'image_example_page.dart';
 
 void main() async {
   await Supabase.initialize(
-      url: "https://rgxyosxqmjigodkzfnoo.supabase.co",
-      anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJneHlvc3hxbWppZ29ka3pmbm9vIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTE0OTE0ODQsImV4cCI6MjAwNzA2NzQ4NH0.CptSeKfrdjdE-71PCsdEjmx5zSI3A15zmwpvKKFCZxw",
+      url: "https://xxxxxxxxxxxxxxxxxxxxxxxxxxxx.supabase.co",
+      anonKey: "-----------------------------------------------------YourSupabaseApiKey-----------------------------------------------------",
   );
 
   runApp(const MyApp());
